@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="文秘知识 - 专业文秘技能提升指南，涵盖公文写作、会议管理、档案分类、职场礼仪及办公自动化技能，助您成为高效能职场助手。">
+    <meta name="keywords" content="文秘知识, 公文写作, 职场礼仪, 办公自动化, 会议管理, 档案管理">
+    <title>文秘知识-高效职场助手与技能提升指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        nav a:hover, nav a.active {
+            opacity: 1;
+            color: var(--accent-color);
+        }
+
+        .search-box {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .search-box {
+                display: block;
+                position: relative;
+            }
+
+            .search-box input {
+                padding: 0.5rem 1rem;
+                border-radius: 20px;
+                border: none;
+                width: 200px;
+                outline: none;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        @media (min-width: 992px) {
+            .main-grid {
+                grid-template-columns: 3fr 1fr;
+            }
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -0.6rem;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .view-more {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        /* Article Cards */
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 160px;
+            background-color: #ddd;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 1.2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            background-color: rgba(52, 152, 219, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            align-self: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: #999;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            border: 1px solid #eee;
+        }
+
+        .widget-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            padding-left: 0.8rem;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .step-list {
+            counter-reset: step;
+        }
+
+        .step-item {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .step-item::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1.8rem;
+            height: 1.8rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 1.8rem;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .step-item h4 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .step-item p {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .quick-link {
+            background-color: #f0f2f5;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            transition: background-color 0.2s;
+        }
+
+        .quick-link:hover {
+            background-color: #e1e4e8;
+        }
+
+        /* Feature List */
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: var(--border-radius);
+            border: 1px solid #eee;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .feature-desc {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: var(--border-radius);
+            border: 1px solid #eee;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fafafa;
+        }
+
+        .faq-question:hover {
+            background-color: #f0f0f0;
+        }
+
+        .faq-answer {
+            padding: 0 1rem 1rem;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a252f;
+            color: #bdc3c7;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            nav {
+                display: none; /* Simplification for mobile */
+            }
+
+            .header-content {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <span>秘书</span>智库
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">公文写作</a></li>
+                    <li><a href="#">职场礼仪</a></li>
+                    <li><a href="#">办公技能</a></li>
+                    <li><a href="#">工具模板</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索文秘知识...">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>全面提升文秘专业素养</h1>
+                <p>系统化学习公文写作规范、会议组织流程、档案管理技巧及职场沟通艺术，为您的职业发展保驾护航。</p>
+                <a href="#skills" class="cta-button">开始学习</a>
+            </div>
+        </section>
+
+        <div class="container main-grid">
+            <div class="content-area">
+                <!-- 核心技能概览 -->
+                <section id="skills">
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <span class="feature-icon">📝</span>
+                            <span class="feature-title">公文写作</span>
+                            <span class="feature-desc">掌握通知、报告、函等法定公文的规范格式与行文逻辑。</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🤝</span>
+                            <span class="feature-title">商务礼仪</span>
+                            <span class="feature-desc">了解接待、座次、着装等职场社交礼仪细节。</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🗂️</span>
+                            <span class="feature-title">档案管理</span>
+                            <span class="feature-desc">学习文件分类、归档、检索及电子化办公管理方法。</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">📅</span>
+                            <span class="feature-title">会务组织</span>
+                            <span class="feature-desc">从会议策划、通知下发到会议记录与纪要撰写的全流程。</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 热门文章 -->
+                <section id="articles">
+                    <div class="section-header">
+                        <h2 class="section-title">热门文秘知识</h2>
+                        <a href="#" class="view-more">查看更多 &rarr;</a>
+                    </div>
+                    <div class="article-grid">
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/doc1/400/250" alt="公文写作规范" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">写作技巧</span>
+                                <h3 class="card-title"><a href="#">公文写作中的“三要素”与“四要素”辨析</a></h3>
+                                <p class="card-desc">详解通知、通报、请示、报告等常用公文的要素构成，避免格式错误。</p>
+                                <div class="card-meta">
+                                    <span>阅读 2.3k</span>
+                                    <span>2023-10-24</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/doc2/400/250" alt="会议纪要" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">会务管理</span>
+                                <h3 class="card-title"><a href="#">如何高效撰写会议纪要与决议</a></h3>
+                                <p class="card-desc">会议纪要不是流水账，本文教你如何提炼核心观点，形成可执行的决议。</p>
+                                <div class="card-meta">
+                                    <span>阅读 1.8k</span>
+                                    <span>2023-10-22</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/doc3/400/250" alt="档案管理" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">档案管理</span>
+                                <h3 class="card-title"><a href="#">企业档案数字化管理的最佳实践</a></h3>
+                                <p class="card-desc">从纸质归档到云端存储，构建高效的文档检索体系。</p>
+                                <div class="card-meta">
+                                    <span>阅读 1.5k</span>
+                                    <span>2023-10-20</span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/doc4/400/250" alt="职场礼仪" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">职场礼仪</span>
+                                <h3 class="card-title"><a href="#">商务接待中的座次礼仪全攻略</a></h3>
+                                <p class="card-desc">详细解析会议桌、轿车、电梯等场景下的主次尊卑礼仪。</p>
+                                <div class="card-meta">
+                                    <span>阅读 3.1k</span>
+                                    <span>2023-10-18</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- 常见问题 -->
+                <section id="faq">
+                    <div class="section-header">
+                        <h2 class="section-title">常见问题解答</h2>
+                    </div>
+                    <div class="faq-list">
+                        <div class="faq-item active">
+                            <div class="faq-question">什么是公文？它与普通信件有什么区别？</div>
+                            <div class="faq-answer">公文是指党政机关、社会团体、企事业单位在行政管理过程中所形成的具有法定效力和规范体式的文书。它与普通信件最大的区别在于其具有法定的权威性、规范的体式以及特定的行文规则。</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">文秘人员如何提升自己的抗压能力？</div>
+                            <div class="faq-answer">文秘工作往往事无巨细且时间紧迫。提升抗压能力的方法包括：提前做好日程规划和任务优先级排序、保持良好的身体状态、学会情绪管理以及建立高效的工作流程（SOP）。</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">电子档案归档时需要注意哪些格式问题？</div>
+                            <div class="faq-answer">电子档案归档时应注意文件命名规范（便于检索）、文件格式的标准化（如PDF、Word）、文件属性的完整填写（作者、创建时间、修改时间），以及确保电子文件的原始性和可读性。</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="sidebar">
+                <!-- 流程图 Widget -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">文秘工作流程图</h3>
+                    <div class="step-list">
+                        <div class="step-item">
+                            <h4>1. 接收信息</h4>
+                            <p>准确理解领导意图与任务要求。</p>
+                        </div>
+                        <div class="step-item">
+                            <h4>2. 计划执行</h4>
+                            <p>制定详细方案，协调资源与时间。</p>
+                        </div>
+                        <div class="step-item">
+                            <h4>3. 过程督办</h4>
+                            <p>跟踪进度，及时反馈并解决突发问题。</p>
+                        </div>
+                        <div class="step-item">
+                            <h4>4. 总结归档</h4>
+                            <p>整理成果，撰写报告并归档留存。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 热门分类 Widget -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">知识分类</h3>
+                    <div class="quick-links">
+                        <a href="#" class="quick-link">行政公文</a>
+                        <a href="#" class="quick-link">商务礼仪</a>
+                        <a href="#" class="quick-link">办公软件</a>
+                        <a href="#" class="quick-link">时间管理</a>
+                        <a href="#" class="quick-link">保密知识</a>
+                        <a href="#" class="quick-link">新闻写作</a>
+                        <a href="#" class="quick-link">演讲技巧</a>
+                        <a href="#" class="quick-link">车辆管理</a>
+                    </div>
+                </div>
+
+                <!-- 下载资源 Widget -->
+                <div class="sidebar-widget" style="background: #eef2f7;">
+                    <h3 class="widget-title">实用模板</h3>
+                    <p style="font-size: 0.9rem; color: #555; margin-bottom: 1rem;">点击下载常用办公文档模板</p>
+                    <a href="#" style="display: block; padding: 0.5rem; background: white; border-radius: 4px; margin-bottom: 0.5rem; text-align: center; font-size: 0.9rem; color: var(--primary-color);">📄 会议通知模板.docx</a>
+                    <a href="#" style="display: block; padding: 0.5rem; background: white; border-radius: 4px; margin-bottom: 0.5rem; text-align: center; font-size: 0.9rem; color: var(--primary-color);">📊 年度工作计划表.xlsx</a>
+                    <a href="#" style="display: block; padding: 0.5rem; background: white; border-radius: 4px; text-align: center; font-size: 0.9rem; color: var(--primary-color);">📝 会议纪要标准格式.docx</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>秘书智库</h3>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">专注于为行政文秘人员提供专业、实用的职场知识库。致力于提升中国行政办公效率与职业素养。</p>
+                </div>
+                <div class="footer-col">
+                    <h3>快速导航</h3>
+                    <ul>
+                        <li><a href="#">公文写作规范</a></li>
+                        <li><a href="#">职场礼仪大全</a></li>
+                        <li><a href="#">办公软件教程</a></li>
+                        <li><a href="#">求职面试指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>联系我们</h3>
+                    <ul>
+                        <li>邮箱：contact@secretary-guide.com</li>
+                        <li>电话：400-123-4567</li>
+                        <li>地址：北京市朝阳区办公大厦A座</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 秘书智库 版权所有 | 文秘知识学习平台</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项的状态
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
