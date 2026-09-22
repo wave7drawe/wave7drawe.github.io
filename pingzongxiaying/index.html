@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="萍踪侠影董洁 - 深度解读经典武侠小说《萍踪侠影》及其改编影视作品，聚焦女主角人物形象分析、剧情脉络梳理以及经典台词赏析。">
+    <meta name="keywords" content="萍踪侠影,董洁,武侠小说,影视分析,人物解读">
+    <title>萍踪侠影董洁-经典武侠人物形象与剧情深度解读</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #D2691E;
+            --bg-color: #fdfbf7;
+            --card-bg: #ffffff;
+            --text-main: #2c2c2c;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            background: var(--primary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        nav a.active {
+            color: var(--secondary-color);
+        }
+
+        /* 首屏 Hero */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://picsum.photos/seed/wuxia_bg/1600/600') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .hero-tags {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+        }
+
+        /* 主要内容区 */
+        main {
+            padding-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* 人物卡片网格 */
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            height: 200px;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* 深度解析区 */
+        .analysis-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            margin-bottom: 60px;
+        }
+
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .analysis-text h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .analysis-text p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .analysis-visual {
+            position: relative;
+        }
+
+        .analysis-visual img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .quote-box {
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #555;
+        }
+
+        /* 影视改编时间线 */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: var(--border-color);
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+            width: 50%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 40px;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 40px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px var(--secondary-color);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -8px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -8px;
+        }
+
+        .timeline-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content span {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* 相关推荐 */
+        .related-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .related-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+
+        .related-item:hover {
+            border-color: var(--secondary-color);
+            background-color: #fffbf7;
+        }
+
+        .related-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: var(--secondary-color);
+        }
+
+        .related-info h4 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .related-info p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2c2c2c;
+            color: #999;
+            padding: 40px 0 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .analysis-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 0;
+                text-align: left;
+            }
+
+            .timeline-item:nth-child(odd) {
+                left: 0;
+                text-align: left;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-dot,
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: 12px;
+                right: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>侠影</span> 萍踪
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#character">人物解读</a></li>
+                    <li><a href="#timeline">影视改编</a></li>
+                    <li><a href="#analysis">深度赏析</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>萍踪侠影董洁</h1>
+            <p>探寻经典武侠文学中的人物魅力与影视演绎，重温那段荡气回肠的江湖往事。</p>
+            <div class="hero-tags">
+                <span class="tag">经典武侠</span>
+                <span class="tag">人物赏析</span>
+                <span class="tag">影视回顾</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- 人物概览 -->
+        <section id="character">
+            <div class="section-title">
+                <span>主要人物形象</span>
+            </div>
+            <div class="character-grid">
+                <!-- 人物卡片 1 -->
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/dongjie1/400/300" alt="董洁形象">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">凌霜波（凌未风）</h3>
+                        <div class="card-meta">
+                            <span>身份：女扮男装</span>
+                            <span>|</span>
+                            <span>性格：刚烈坚韧</span>
+                        </div>
+                        <p class="card-desc">凌未风是《萍踪侠影》中的核心人物，她女扮男装，行走江湖。其形象通常被描绘为英姿飒爽、剑术高超的侠客，既有女性的细腻，又有男性的豪情。</p>
+                        <a href="#" class="btn">查看详细资料</a>
+                    </div>
+                </article>
+
+                <!-- 人物卡片 2 -->
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/dongjie2/400/300" alt="云蕾形象">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">云蕾</h3>
+                        <div class="card-meta">
+                            <span>身份：武林世家千金</span>
+                            <span>|</span>
+                            <span>性格：外柔内刚</span>
+                        </div>
+                        <p class="card-desc">云蕾是故事的女主角，身为武林世家云蕾的女儿，她肩负家族使命。她与凌未风之间有着复杂的情感纠葛，是“侠骨柔情”的典型代表。</p>
+                        <a href="#" class="btn">查看详细资料</a>
+                    </div>
+                </article>
+
+                <!-- 人物卡片 3 -->
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/dongjie3/400/300" alt="张丹枫形象">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">张丹枫</h3>
+                        <div class="card-meta">
+                            <span>身份：名门之后</span>
+                            <span>|</span>
+                            <span>性格：侠肝义胆</span>
+                        </div>
+                        <p class="card-desc">张丹枫是书中的男主角，其形象俊朗潇洒，心怀天下。他在民族大义与个人情感之间做出艰难抉择，是许多读者心中的武侠英雄典范。</p>
+                        <a href="#" class="btn">查看详细资料</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 影视改编时间线 -->
+        <section id="timeline">
+            <div class="section-title">
+                <span>经典影视改编</span>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>1981年电视剧版</h4>
+                        <span>改编自梁羽生原著</span>
+                        <p>早期的重要电视改编作品，奠定了该IP在荧幕上的基础形象。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>2010年电视剧版</h4>
+                        <span>新版制作</span>
+                        <p>由何润东、李沁等主演，制作精良，视觉特效较为现代。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>动画及衍生作品</h4>
+                        <span>跨界改编</span>
+                        <p>随着动画产业的发展，该IP也进入了二次元领域，以年轻化视角重新演绎故事。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 深度赏析 -->
+        <section id="analysis">
+            <div class="section-title">
+                <span>深度赏析与解读</span>
+            </div>
+            <div class="analysis-section">
+                <div class="analysis-grid">
+                    <div class="analysis-text">
+                        <h3>侠骨柔情与家国情怀</h3>
+                        <p>《萍踪侠影》之所以成为经典，不仅在于其精彩的武打设计和曲折的情节，更在于其对“侠”字的深刻诠释。张丹枫与云蕾的爱情故事，并非单纯的儿女情长，而是融入了家国大义与民族存亡的宏大背景。</p>
+                        <p>这种“侠之大者，为国为民”的精神内核，使得人物形象更加丰满立体。在面临国家危难时，个人情感往往需要做出让步，这种冲突为故事增添了厚重的历史感和悲剧色彩。</p>
+                        
+                        <div class="quote-box">
+                            “萍踪侠影，去留无意，漫随天外云卷云舒。”
+                        </div>
+
+                        <h3>人物塑造的艺术</h3>
+                        <p>在人物塑造上，作者善于通过细节描写来展现人物的内心世界。无论是凌未风的冷峻，还是云蕾的含蓄，都通过言行举止得到了细腻的刻画。这种文学性的描写也为后来的影视改编提供了丰富的素材。</p>
+                    </div>
+                    <div class="analysis-visual">
+                        <img src="https://picsum.photos/seed/martialarts/600/400" alt="武侠意境图">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 相关推荐 -->
+        <section>
+            <div class="section-title">
+                <span>相关推荐</span>
+            </div>
+            <div class="related-list">
+                <a href="#" class="related-item">
+                    <div class="related-icon">📚</div>
+                    <div class="related-info">
+                        <h4>梁羽生武侠小说全集</h4>
+                        <p>阅读原著，感受文字间的江湖韵味与历史沧桑。</p>
+                    </div>
+                </a>
+                <a href="#" class="related-item">
+                    <div class="related-icon">🎬</div>
+                    <div class="related-info">
+                        <h4>经典武侠影视合集</h4>
+                        <p>回顾历年来关于《萍踪侠影》的各类影视作品。</p>
+                    </div>
+                </a>
+                <a href="#" class="related-item">
+                    <div class="related-icon">⚔️</div>
+                    <div class="related-info">
+                        <h4>武侠文化研究</h4>
+                        <p>深入了解武侠小说对现代社会文化的影响与意义。</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于本站</h4>
+                    <p>致力于为武侠文学与影视爱好者提供深度内容分享与交流平台，重温经典，致敬经典。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">人物档案</a></li>
+                        <li><a href="#">剧情大纲</a></li>
+                        <li><a href="#">影视评分</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>版权信息</h4>
+                    <ul>
+                        <li><a href="#">免责声明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系站长</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 萍踪侠影人物专题页. All Rights Reserved. 本站内容仅供学习交流使用。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
