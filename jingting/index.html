@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>静听 - 沉浸式白噪音与自然之声</title>
+    <meta name="description" content="静听专注于提供高质量的白噪音、自然之声与冥想音乐。在这里，你可以通过环境音疗愈身心，助眠、专注、放松，享受片刻宁静。">
+    <meta name="keywords" content="静听, 白噪音, 助眠音乐, 冥想音乐, 自然之声, 背景音乐">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #8e44ad;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 12px;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+            padding: 15px 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 20px;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-1px);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            text-align: center;
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .search-box {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 16px 20px;
+            padding-right: 50px;
+            border-radius: 30px;
+            border: 2px solid #e0e0e0;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--accent-color);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+        }
+
+        /* 分类网格 */
+        .categories {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .cat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .cat-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .cat-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* 热门播放列表 */
+        .playlists {
+            padding: 60px 0;
+            background-color: white;
+        }
+
+        .playlist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .playlist-card {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            background: var(--bg-color);
+            transition: transform 0.3s;
+            position: relative;
+            group: 'playlist';
+        }
+
+        .playlist-card:hover {
+            transform: scale(1.02);
+        }
+
+        .card-img-placeholder {
+            width: 100%;
+            height: 180px;
+            background-color: #ddd;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: rgba(0,0,0,0.1);
+        }
+
+        .card-img-placeholder::after {
+            content: '▶';
+            position: absolute;
+            font-size: 3rem;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .playlist-card:hover .card-img-placeholder::after {
+            opacity: 1;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .card-meta {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* 使用场景 */
+        .scenarios {
+            padding: 60px 0;
+        }
+
+        .scenario-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .scenario-item {
+            display: flex;
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            align-items: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .scenario-icon {
+            font-size: 2rem;
+            margin-right: 20px;
+            width: 60px;
+            text-align: center;
+        }
+
+        .scenario-info {
+            flex: 1;
+        }
+
+        .scenario-info h3 {
+            margin-bottom: 5px;
+        }
+
+        .scenario-info p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* FAQ 区域 */
+        .faq-section {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-answer {
+            margin-top: 15px;
+            color: var(--text-secondary);
+            display: none;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--primary-color);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            nav ul {
+                display: none; /* 简化处理：移动端隐藏菜单 */
+            }
+            .scenario-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            .scenario-icon {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 广告代码 -->
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+
+    <!-- 导航栏 -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-color)"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                静听
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#playlists">播放列表</a></li>
+                    <li><a href="#scenarios">使用场景</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                    <li><a href="#" class="cta-btn">开始聆听</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主视觉区域 -->
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>在喧嚣中寻找片刻宁静</h1>
+                <p>静听提供精心制作的白噪音、自然之声与冥想音乐。无论你需要助眠、专注还是放松，这里都有适合你的声音。</p>
+                <div class="search-box">
+                    <input type="text" placeholder="搜索声音，如：雨声、篝火、海浪...">
+                    <span class="search-icon">🔍</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心分类 -->
+        <section class="categories container">
+            <div class="section-title">
+                <h2>探索声音世界</h2>
+                <p>选择适合你当下的心情与环境</p>
+            </div>
+            <div class="category-grid">
+                <a href="#" class="category-card">
+                    <span class="cat-icon">🌧️</span>
+                    <div class="cat-title">自然之声</div>
+                    <div class="cat-desc">雨声、雷暴、森林、溪流</div>
+                </a>
+                <a href="#" class="category-card">
+                    <span class="cat-icon">🔥</span>
+                    <div class="cat-title">居家氛围</div>
+                    <div class="cat-desc">壁炉、咖啡店、下雨的夜晚</div>
+                </a>
+                <a href="#" class="category-card">
+                    <span class="cat-icon">🧘</span>
+                    <div class="cat-title">冥想与专注</div>
+                    <div class="cat-desc">频率音、颂钵、脑波音乐</div>
+                </a>
+                <a href="#" class="category-card">
+                    <span class="cat-icon">🛏️</span>
+                    <div class="cat-title">深度助眠</div>
+                    <div class="cat-desc">粉红噪音、持续雨声、白噪音</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- 热门播放列表 -->
+        <section id="playlists" class="playlists">
+            <div class="container">
+                <div class="section-title">
+                    <h2>热门推荐</h2>
+                    <p>大家都在听的治愈之声</p>
+                </div>
+                <div class="playlist-grid">
+                    <article class="playlist-card">
+                        <div class="card-img-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">🌧️</div>
+                        <div class="card-content">
+                            <div class="card-title">午夜雨窗</div>
+                            <div class="card-meta">
+                                <span>自然</span>
+                                <span>3小时循环</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="playlist-card">
+                        <div class="card-img-placeholder" style="background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);">🌊</div>
+                        <div class="card-content">
+                            <div class="card-title">海浪轻拍</div>
+                            <div class="card-meta">
+                                <span>海洋</span>
+                                <span>2小时循环</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="playlist-card">
+                        <div class="card-img-placeholder" style="background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);">🌲</div>
+                        <div class="card-content">
+                            <div class="card-title">深林鸟鸣</div>
+                            <div class="card-meta">
+                                <span>森林</span>
+                                <span>5小时循环</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="playlist-card">
+                        <div class="card-img-placeholder" style="background: linear-gradient(135deg, #fddb92 0%, #d1fdff 100%);">☕</div>
+                        <div class="card-content">
+                            <div class="card-title">午后咖啡馆</div>
+                            <div class="card-meta">
+                                <span>城市</span>
+                                <span>4小时循环</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 使用场景 -->
+        <section id="scenarios" class="scenarios container">
+            <div class="section-title">
+                <h2>为什么选择静听？</h2>
+                <p>科学的声音环境改善你的生活质量</p>
+            </div>
+            <div class="scenario-list">
+                <div class="scenario-item">
+                    <div class="scenario-icon">💤</div>
+                    <div class="scenario-info">
+                        <h3>改善睡眠质量</h3>
+                        <p>规律的频率和持续的白噪音可以有效屏蔽突发噪音，帮助大脑进入放松状态，缩短入睡时间。</p>
+                    </div>
+                </div>
+                <div class="scenario-item">
+                    <div class="scenario-icon">🧠</div>
+                    <div class="scenario-info">
+                        <h3>提升专注力</h3>
+                        <p>在需要深度工作的环境中，背景白噪音可以降低大脑处理无关声音的负担，提高工作效率。</p>
+                    </div>
+                </div>
+                <div class="scenario-item">
+                    <div class="scenario-icon">🧘‍♀️</div>
+                    <div class="scenario-info">
+                        <h3>缓解焦虑与压力</h3>
+                        <p>通过引导性的呼吸声和冥想音乐，配合舒缓的节奏，帮助用户快速平复情绪，回归内心平静。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 -->
+        <section id="faq" class="faq-section">
+            <div class="container faq-container">
+                <div class="section-title">
+                    <h2>常见问题</h2>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">这些声音是收费的吗？</div>
+                    <div class="faq-answer">静听提供基础的白噪音和自然之声完全免费，部分深度冥想音效和高级混音需要会员订阅。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何使用这些声音助眠？</div>
+                    <div class="faq-answer">建议在睡前30分钟打开，将音量调至适中水平（约40%-60%），选择带有渐弱功能的播放列表，让声音自然淡出。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">支持离线下载吗？</div>
+                    <div class="faq-answer">是的，开通会员后即可下载喜欢的声音，无需网络也能在手机或电脑上播放。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于静听</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        我们致力于打造全球最优质的在线白噪音平台，用声音治愈每一个疲惫的灵魂。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>探索</h4>
+                    <ul>
+                        <li><a href="#">所有声音</a></li>
+                        <li><a href="#">播放列表</a></li>
+                        <li><a href="#">社区推荐</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持</h4>
+                    <ul>
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">版权声明</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">微博</a></li>
+                        <li><a href="#">小红书</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 静听 All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项状态
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
